@@ -21,7 +21,7 @@ To run the code given in the code bundle, follow the steps/instructions given in
 1) ~350MB of disk space.
 2) 16-23MB of disk space.
 
-*OS: Mac OS X, Windows, or Linux
+* OS: Mac OS X, Windows, or Linux
 
 
 ## Related Python books and videos:
