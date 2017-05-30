@@ -14,13 +14,13 @@ import schedule
 import time
 
 def check_flights():
-	url = "https://www.google.com/flights/explore/#explore;f=JFK,EWR,LGA;t=HND,NRT,TPE,HKG,KIX;s=1;li=8;lx=12;d=2016-04-01"
-	driver = webdriver.PhantomJS()
+	URL="https://www.google.com/flights/explore/#explore;f=JFK,EWR,LGA;t=HND,NRT,TPE,HKG,KIX;s=1;li=8;lx=12;d=2017-06-01" 
+	driver = webdriver.PhantomJS(PJS_PATH)
 	dcap = dict(DesiredCapabilities.PHANTOMJS)
-	dcap["phantomjs.page.settings.userAgent"] = \
-	("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36")
-	driver = webdriver.PhantomJS(desired_capabilities=dcap, service_args=['--ignore-ssl-errors=true'])
-	driver.get(url)
+	dcap["phantomjs.page.settings.userAgent"] = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36")
+	driver = webdriver.PhantomJS(desired_capabilities=dcap, executable_path=PJS_PATH)
+	driver.implicitly_wait(20)
+	driver.get(URL)
 	wait = WebDriverWait(driver, 20)
 	wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "span.FTWFGDB-v-c")))
 
